@@ -25,6 +25,10 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
 
+        //默认令牌发放的有效期是永久
+        //Passport::tokensExpireIn(Carbon::now()->addDays(2));
+        //Passport::refreshTokensExpireIn(Carbon::now()->addDays(4));
+
         $this->registerPolicies();
 
         Passport::routes();

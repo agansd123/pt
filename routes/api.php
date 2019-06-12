@@ -24,5 +24,6 @@ Route::group(['namespace' => 'api'], function () {
 
 Route::group(['middleware' => 'auth:api', 'namespace' => 'api'], function() {
     Route::get('/passport', 'UserController@passport')->name('passport');
+    Route::get('/logout', 'UserController@logout')->name('logout');
 });
 
